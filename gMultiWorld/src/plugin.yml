@@ -1,0 +1,10 @@
+name: gMultiWorld
+version: 2.0.0g
+main: de.gigamons.multiworld.MultiWorld
+description: A plugin for core world managing
+author: Kazuki
+
+commands:
+   world:
+     description: The main gMultiWorld Command
+     usage: /world
