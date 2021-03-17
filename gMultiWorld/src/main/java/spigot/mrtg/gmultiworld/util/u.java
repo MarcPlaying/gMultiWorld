@@ -6,5 +6,5 @@ import org.bukkit.command.ConsoleCommandSender;
 public class u {
 	
 	public static ConsoleCommandSender s = Bukkit.getConsoleSender();
-	public static String p = "§2gMultiWorld §8 ⇆ §7";
+	public static String p = "§2► gMultiWorld ◄§8 ▇ §7";
 }

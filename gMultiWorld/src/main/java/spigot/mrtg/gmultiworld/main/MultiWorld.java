@@ -1,6 +1,10 @@
 package spigot.mrtg.gmultiworld.main;
 
+import java.io.File;
+
 import org.bukkit.Bukkit;
+import org.bukkit.World;
+import org.bukkit.WorldCreator;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import spigot.mrtg.gmultiworld.cmd.cmdWorld;
@@ -16,6 +20,26 @@ public class MultiWorld extends JavaPlugin{
 		jp = this;
 		u.s.sendMessage(u.p + "is now active");
 		
+		File folder = getServer().getWorldContainer();
+		File[] listOfFiles = folder.listFiles();
+
+		for (File file : listOfFiles) {
+		    if(file.isDirectory()) {
+		    	
+		    	if(!(file.getName().contains("world")) || !!(file.getName().contains("world_nether")) || !(file.getName().contains("world_the_end")) || !(file.getName().contains("logs")) || !(file.getName().contains("plugins"))) {
+		    		u.s.sendMessage(file.getAbsolutePath());
+		    		File f = new File(file.getPath() + "\region");
+		    		if(f.exists()) {
+		    			u.s.sendMessage(file.getName());
+		    			World loader = new WorldCreator(file.getName()).createWorld();
+			    		u.s.sendMessage(u.p + "loaded world " + loader.getName());
+		    		}
+		    	}
+		    }else {
+		    	
+		    }
+		}
+
 		registry();
 	}
 	

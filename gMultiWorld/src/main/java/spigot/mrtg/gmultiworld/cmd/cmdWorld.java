@@ -20,22 +20,22 @@ public class cmdWorld implements CommandExecutor {
 			if (p.hasPermission("gMultiWorld.world") || p.hasPermission("gMultiWorld.admin")) {
 				WorldAPI api = new WorldAPI();
 				if (args.length == 0) {
-					p.sendMessage("§8--- §aGMultiWorld §8---");
-					p.sendMessage("§2/world import <name> §7- §8Import a Map Folder");
-					p.sendMessage("§2/world tp <name> <Player> §7- §8Teleport a Player to a World");
-					p.sendMessage("§2/world tp <name> §7- §8Teleport you to a World");
-					p.sendMessage("§2/world delete <name> §7- §8Delete a World");
-					p.sendMessage("§2/world list§7- §8Show all worlds");
-					p.sendMessage("§2/world setspawn §7- §8Set a Spawn for a World");
-					p.sendMessage("§2/world spawn §7- §8Go back to World spawn");
-					p.sendMessage("§2/world create <name> §7- §8Create a World");
+					p.sendMessage("§8--- ▇ §aGMultiWorld §8▇---");
+					p.sendMessage("§2/world import <name> ▇§7 §8Import a Map Folder");
+					p.sendMessage("§2/world tp <name> <Player> ▇§7 §8Teleport a Player to a World");
+					p.sendMessage("§2/world tp <name> ▇§7 §8Teleport you to a World");
+					p.sendMessage("§2/world delete <name> ▇§7 §8Delete a World");
+					p.sendMessage("§2/world list ▇§7 §8Show all worlds");
+					p.sendMessage("§2/world setspawn ▇§7 §8Set a Spawn for a World");
+					p.sendMessage("§2/world spawn ▇§7 §8Go back to World spawn");
+					p.sendMessage("§2/world create <name> ▇§7 §8Create a World");
 					return true;
 				} else {
 					if (args[0].equalsIgnoreCase("import")) {
 						
 						if(args.length == 2) {
 							api.importWorld(args[1], p);
-							p.sendMessage(u.p + "Imported World §a"+args[1]);
+							p.sendMessage(u.p + "Imported World ▇§a"+args[1]);
 							return true;
 						}else {
 							p.sendMessage(u.p + "That is not a correct World /world import <Name>");
@@ -57,7 +57,7 @@ public class cmdWorld implements CommandExecutor {
 								return true;
 							}
 							t.teleport(tele.getSpawnLocation());
-							p.sendMessage(u.p + "Teleported §a"+t.getName()+"§7 to §a"+tele.getName());
+							p.sendMessage(u.p + "Teleported ▇§a"+t.getName()+"▇§7 to ▇§a"+tele.getName());
 							return true;
 						} else {
 							World tele = Bukkit.getWorld(args[1]);
@@ -66,7 +66,7 @@ public class cmdWorld implements CommandExecutor {
 								return true;
 							}
 							p.teleport(tele.getSpawnLocation());
-							p.sendMessage(u.p + "Teleported to §a"+tele.getName());
+							p.sendMessage(u.p + "Teleported to ▇§a"+tele.getName());
 							return true;
 							}
 					} else if(args[0].equalsIgnoreCase("delete")){
@@ -83,7 +83,7 @@ public class cmdWorld implements CommandExecutor {
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
-						p.sendMessage(u.p + "Deleted World §a"+target.getName());
+						p.sendMessage(u.p + "Deleted World ▇§a"+target.getName());
 						return true;
 					} else if(args[0].equalsIgnoreCase("create")) {
 						api.create(args.length < 2 ? "" : args[1], p);
@@ -96,39 +96,38 @@ public class cmdWorld implements CommandExecutor {
 						count++;
 						}
 						for(String s : worldNames){
-						p.sendMessage(u.p + "World: §a"+s);
+						p.sendMessage(u.p + "World: ▇§a"+s);
 						}
 						return true;
 					}else if(args[0].equalsIgnoreCase("setspawn")) {
 						p.getWorld().setSpawnLocation(p.getLocation());
-						p.sendMessage(u.p + "The Spawn Location of §a"+p.getWorld().getName()+ "§7 was set to§a "+p.getLocation().getBlockX() +"," + p.getLocation().getBlockY()+"," + p.getLocation().getBlockZ());
+						p.sendMessage(u.p + "The Spawn Location of ▇§a"+p.getWorld().getName()+ "▇§7 was set to▇§a "+p.getLocation().getBlockX() +"," + p.getLocation().getBlockY()+"," + p.getLocation().getBlockZ());
 						return true;
 					}else if(args[0].equalsIgnoreCase("spawn")){
 						p.teleport(p.getWorld().getSpawnLocation());
 						p.sendMessage(u.p + "You are now at the World Spawn");
 						return true;
 					}else {
-						p.sendMessage(u.p + "§cWrong Syntax: All Commands:");
-						p.sendMessage("§8--- §aGMultiWorld §8---");
-						p.sendMessage("§2/world import <name> §7- §8Import a Map Folder");
-						p.sendMessage("§2/world tp <name> <Player> §7- §8Teleport a Player to a World");
-						p.sendMessage("§2/world tp <name> §7- §8Teleport you to a World");
-						p.sendMessage("§2/world create <name> §7- §8Create a World");
-						p.sendMessage("§2/world delete <name> §7- §8Delete a World");
-						p.sendMessage("§2/world list§7- §8Show all worlds");
-						p.sendMessage("§2/world setspawn §7- §8Set a Spawn for a World");
-						p.sendMessage("§2/world spawn §7- §8Go back to World spawn");
+						p.sendMessage("§8--- ▇ §aGMultiWorld §8▇---");
+						p.sendMessage("§2/world import <name> ▇§7 §8Import a Map Folder");
+						p.sendMessage("§2/world tp <name> <Player> ▇§7 §8Teleport a Player to a World");
+						p.sendMessage("§2/world tp <name> ▇§7 §8Teleport you to a World");
+						p.sendMessage("§2/world delete <name> ▇§7 §8Delete a World");
+						p.sendMessage("§2/world list ▇§7 §8Show all worlds");
+						p.sendMessage("§2/world setspawn ▇§7 §8Set a Spawn for a World");
+						p.sendMessage("§2/world spawn ▇§7 §8Go back to World spawn");
+						p.sendMessage("§2/world create <name> ▇§7 §8Create a World");
 						return true;
 					}
 					
 				
 			}
 			}else {
-				p.sendMessage(u.p+"§cYou don't have Permissions to Execute that Command");
+				p.sendMessage(u.p+"▇§cYou don't have Permissions to Execute that Command");
 				return true;
 			}
 		}else {
-			u.s.sendMessage(u.p + "§cThe Console can't user /"+label);
+			u.s.sendMessage(u.p + "▇§cThe Console can't user /"+label);
 			return true;
 		}
 		

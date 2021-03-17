@@ -10,7 +10,7 @@ public class onWorldLoad implements Listener {
 	
 	@EventHandler
 	public void onWorldL(WorldLoadEvent e) {
-		u.s.sendMessage(u.p + "Load the World §a"+e.getWorld().getName());
+		u.s.sendMessage(u.p + "Load the World ▇ §a"+e.getWorld().getName());
 	}
 
 }

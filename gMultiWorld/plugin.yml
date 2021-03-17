@@ -1,6 +1,6 @@
 name: gMultiWorld
 version: 2.0.0g
-main: de.gigamons.multiworld.MultiWorld
+main: spigot.mrtg.gmultiworld.main.MultiWorld
 description: A plugin for core world managing
 author: Kazuki
 

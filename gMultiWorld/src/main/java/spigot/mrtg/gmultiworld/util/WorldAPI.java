@@ -19,7 +19,7 @@ public class WorldAPI {
 	public void importWorld(String name, CommandSender p) {
 		File file = new File(name + "/");
 		if(!file.exists()) {
-			p.sendMessage(u.p + "This world don't exist");
+			p.sendMessage(u.p + "This world doesn't exist");
 		}else {
 			File f = new File(name+"/uid.dat");
 			f.delete();
@@ -32,7 +32,7 @@ public class WorldAPI {
 	    World w = Bukkit.getWorld(world);
 	    if(!w.equals(null)) {
 	        Bukkit.getServer().unloadWorld(w, true);
-	        p.sendMessage(u.p + "This world §a"+w.getName()+" §7is now disabled!");
+	        p.sendMessage(u.p + "This world ▇ §a"+w.getName()+" §7▇ is now disabled!");
 	    }else {
 	    	p.sendMessage(u.p + "This world don't exist");
 	    }
@@ -41,10 +41,10 @@ public class WorldAPI {
 	public World create(String world, CommandSender p) {
 		if(world.trim() == "")
 			{ p.sendMessage(u.p + "Invalid Name!"); return null; }
-		p.sendMessage(u.p + "Start creating World! (This could take a while)");
+		p.sendMessage(u.p + "Started create world! (This could take a while)");
 		WorldCreator wc = new WorldCreator(world);
 		World w = Bukkit.createWorld(wc);
-		p.sendMessage(u.p + "Created World §a"+w.getName());
+		p.sendMessage(u.p + "Created World ▇§a "+w.getName());
 		return w;
 	}
 	
@@ -55,9 +55,9 @@ public class WorldAPI {
 	        File deleteFolder = w.getWorldFolder();
 	        Boolean delete = delete(deleteFolder);
 	        if(delete == true) {
-	        	p.sendMessage(u.p + "This world §a"+w.getName()+"§7 is now deleted!");
+	        	p.sendMessage(u.p + "This world ▇ §a"+w.getName()+"§7 ▇ is now deleted!");
 	        }else {
-	        	p.sendMessage(u.p + "Can't disable World §a"+w.getName());
+	        	p.sendMessage(u.p + "Can't disable World ▇ §a"+w.getName());
 	        }
 	    }else {
 	    	p.sendMessage(u.p + "This world don't exist");
@@ -71,9 +71,9 @@ public class WorldAPI {
 	        File targetFolder = new File("new/");
 	        copy(copyFolder, targetFolder);
 	        importWorld(neww, p);
-	        p.sendMessage(u.p + "Copied §a"+old.getName()+" §7to §a" +neww);
+	        p.sendMessage(u.p + "Copied ▇ §a"+old.getName()+" ▇§7 to ▇§a" +neww);
 	    }else {
-	    	p.sendMessage(u.p + "This world don't exist");
+	    	p.sendMessage(u.p + "This world doesn't exist");
 	    }
 	}
 	
